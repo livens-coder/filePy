@@ -51,3 +51,4 @@ while True:
     time.sleep(0.33)
 
 print("Jwèt la fini.")
+Print("ChatGPT e kek mote de recherche edem, nou poko gen nivo pwogramasyon sa")
