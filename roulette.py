@@ -5,31 +5,36 @@ print("Pwogram sa ap pemet ou jwe woulet")
 nomb_chwazi = random.randrange(0, 101)
 k='Wap gen pouw chwazi nonb nan de 0 a 100'
 print(k.upper())
-print("Odinate chwazi yon nonb nan anteval 0 a 100 ki: ", nomb_chwazi)
+#print("Odinate chwazi yon nonb nan anteval 0 a 100 ki: ", nomb_chwazi)
 print("***************************************************************************")
 
 chans_rete = 5
 eseye = 0
 esko_itilizate=0
 
-#while True:  
+ 
 try:
     with open('done.pickle', 'rb') as fiche:
         done = pickle.load(fiche)
 except FileNotFoundError:
     done = {}
-epsedo_sezi = input("Rantre non w (sans espaces) : ")
-epsedo=epsedo_sezi.lower()
+epsedo = input("Rantre non w (sans espaces) : ")
 
-while ' ' in epsedo:
-    epsedo_sezi = input("Non itilizatew pa sipoze gen espas, eseye anko tanpri : ")
-    epsedo=epsedo_sezi.lower()
+while True:
+    epsedo = input("Antre non itilizatew (san let majiskil, san espas): ")
+    if ' ' not in epsedo and epsedo.islower(): 
+        break
+    else:
+        print("Non itilizatew pa sipoze gen espas ak let majiskil")
+
 if epsedo in done:
     esko_itilizate = done[epsedo]
     print("Bonjour! {}, esko avan ou te : {}".format(epsedo, esko_itilizate))
 else:
     print("Bonjour! {}, byenvini nan jwet nou an !".format(epsedo))
     done[epsedo] = 0
+g=False
+
 while True:
     while chans_rete > 0:
 
